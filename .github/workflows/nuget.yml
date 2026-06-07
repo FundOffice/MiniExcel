@@ -8,7 +8,7 @@ on:
       version:
         description: 'Package Version (e.g., 1.0.0)'
         required: true
-        default: '1.0.0'
+        default: '2.0.0'
 
 env:
   # GitHub Packages NuGet 源，repository_owner 会自动解析为你的组织名或用户名
@@ -32,7 +32,7 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           # 根据你的最高目标框架调整，高版本 SDK 可以向下兼容编译低版本和 netstandard
-          dotnet-version: '8.0.x' 
+          dotnet-version: '10..0.x' 
           # 配置源，以便 restore 时能拉取同组织下的其他依赖包
           source-url: ${{ env.NUGET_SOURCE }}
         env:
